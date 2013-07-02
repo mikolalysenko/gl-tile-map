@@ -1,6 +1,6 @@
 {
   "name": "gl-tile-map",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Creates a mip mapped texture atlas from a list of tiles and uploads it to WebGL",
   "main": "tilemap.js",
   "dependencies": {
