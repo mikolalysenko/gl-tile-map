@@ -9,8 +9,8 @@ function reshapeTileMap(tiles) {
   return ndarray(tiles.data, [s[0]*s[2], s[1]*s[3], s[4]])
 }
 
-function createTileMap(gl, tiles) {
-  var pyramid = tileMipMap(tiles)
+function createTileMap(gl, tiles, pad) {
+  var pyramid = tileMipMap(tiles, pad)
   
   //Fill in mip levels
   var tex = createTexture(gl, reshapeTileMap(pyramid[0]))
