@@ -14,13 +14,18 @@ function createTileMap(gl, tiles) {
   
   //Fill in mip levels
   var tex = createTexture(gl, reshapeTileMap(pyramid[0]))
-  for(var i=1; i<pyramid.length; ++i) {
-    tex.setPixels(reshapeTileMap(pyramid[i]), 0, 0, i)
-  }
-  
+
+  //Allocate memory (stupid way to do this)
+  tex.generateMipmap()
+
   //Set sample parameters
   tex.magFilter = gl.LINEAR
   tex.minFilter = gl.LINEAR_MIPMAP_LINEAR
+
+  //Set up mipmaps
+  for(var i=1; i<pyramid.length; ++i) {
+    tex.setPixels(reshapeTileMap(pyramid[i]), 0, 0, i)
+  }
   
   return tex
 }
