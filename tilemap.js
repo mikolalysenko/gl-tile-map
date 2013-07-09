@@ -17,16 +17,16 @@ function createTileMap(gl, tiles, pad) {
 
   //Allocate memory (stupid way to do this)
   tex.generateMipmap()
-
-  //Set sample parameters
-  tex.magFilter = gl.LINEAR
-  tex.minFilter = gl.LINEAR_MIPMAP_LINEAR
-  tex.mipSamples = 4
   
   //Set up mipmaps
   for(var i=1; i<pyramid.length; ++i) {
     tex.setPixels(reshapeTileMap(pyramid[i]), 0, 0, i)
   }
+  
+  //Set sample parameters
+  tex.magFilter = gl.LINEAR
+  tex.minFilter = gl.LINEAR_MIPMAP_LINEAR
+  tex.mipSamples = 4
   
   return tex
 }
