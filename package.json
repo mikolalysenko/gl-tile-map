@@ -4,10 +4,10 @@
   "description": "Creates a mip mapped texture atlas from a list of tiles and uploads it to WebGL",
   "main": "tilemap.js",
   "dependencies": {
-    "gl-texture2d": "~0.1.2",
-    "ndarray": "~1.0.3",
-    "tile-mip-map": "~0.2.0",
-    "webglew": "~0.0.0"
+    "gl-texture2d": "^1.0.1",
+    "ndarray": "^1.0.11",
+    "tile-mip-map": "^0.2.1",
+    "webglew": "^1.0.2"
   },
   "devDependencies": {},
   "scripts": {
